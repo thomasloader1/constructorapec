@@ -1,0 +1,258 @@
+mixin sub-navbar(datas)
+    - let arrCopy = datas.slice();
+    - let lastElement = arrCopy.pop();
+    - let boton = datas[0]
+      .container
+        .row
+          .col-12.d-flex.justify-content-center.my-3.rounded-lg.py-3
+            .navbar.navbar-expand-lg.navbar-dark.bg-dark.rounded-xl.p-0.w-100.p-2
+              button(type="button" data-toggle="collapse" data-target="#basicExampleSubNav" aria-controls="basicExampleSubNav" aria-expanded="false" aria-label="Toggle navigation").navbar-toggler.d-flex.justify-content-center.align-items-center.font-weight-bold.py-2.w-100.d-lg-none.text-uppercase.spacing-2.font-22#btnBug= boton
+                .z-depth-1.arrow-sub-navbar.rounded-circle.red.ml-4.d-flex.align-items-center.justify-content-center
+                  i.fas.fa-chevron-down.fa-xs 
+              
+              .collapse.navbar-collapse.text-uppercase.spacing-2.red.rounded-xl#basicExampleSubNav
+                each data,i in datas
+                  ul.navbar-nav.text-md-center
+                    li.nav-item.ml-2
+                      a.nav-link(href="#")= data
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+mixin text-bug(objBug)
+  .container
+    .col-10.mx-auto
+      .d-flex.flex-column.justify-content-center.align-items-center.text-uppercase.text-center.text-white.degrade-red.rounded-xl.border-red-darken.py-3.position-relative.z-index-4.z-depth-2
+        .position-absolute.icon-absolute-bug
+          i.fas.fa-bug.fa-2x.mb-3.solid-red-darken.circle-white.shadow
+        h1.font-weight-bold.font-35.spacing-5.mt-4= objBug.name
+        hr.border.border-white.rounded.rounded-lg.w-75.mx-auto.shadow-bottom
+        p.font-11.spacing-3.px-4.mb-3= objBug.description
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+mixin card-factory(cards)
+  each card in cards
+    .col-sm-12.col-md-4.d-flex.align-items-stretch.justify-content-center.my-2.my-sm-3
+      div(class= `img-service-${card.image}`).card.rounded.rounded-lg.w-100
+        .card-body.position-relative.z-index-3
+          h4.card-title 
+            a(href= card.link).text-white #{card.title}
+          hr.pt-1.white.w-100
+          p.card-text.text-white.mb-5 #{card.description}
+          .text-center.position-absolute.bottom-10.left-0.right-0
+            a(href= card.link).btn.btn-outline-white.text-uppercase saber mas
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+mixin steps
+  <section class="pt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-3 py-3 d-flex align-items-streach ">
+          <div class="info-color w-100 rounded-lg">
+            <div class="text-center text-white p-3">
+              <i class="fas fa-phone fa-2x mb-3"></i>
+              <p class="font-weight-bold font-20">Contacto</p>
+              <hr class="border border-white rounded-lg">
+              <p class="font-weight-bold my-3">Llámenos y será atendido por nuestra delegación más cercana</p>
+              <div class="text-left">
+                <div class="d-flex align-items-center justify-content-start mt-3">
+                  <i class="fas fa-check fa-1x mr-2"></i> <span>Técnicos cerca de usted</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mt-3">
+                  <i class="fas fa-check fa-1x mr-2"></i> <span>Atención rápida y personalizada</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3 py-3 d-flex align-items-streach">
+          <div class="warning-color w-100 rounded-lg">
+            <div class="text-center text-white p-3">
+              <i class="fas fa-user fa-2x mb-3"></i>
+              <p class="font-weight-bold font-20">Inspección</p>
+              <hr class="border border-white rounded-lg">
+              <p class="font-weight-bold my-3">Evaluaremos su problema de plagas, haremos una inspección si es necesario y le daremos presupuesto y recomendaciones</p>
+              <div class="text-left">
+                <div class="d-flex align-items-center justify-content-start mt-3">
+                  <i class="fas fa-check fa-1x mr-2"></i> <span>Acordamos la hora de la visita</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mt-3">
+                  <i class="fas fa-check fa-1x mr-2"></i> <span>Soluciones a medida para su problema de plagas</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mt-3">
+                  <i class="fas fa-check fa-1x mr-2"></i> <span>Técnicos de plantilla y homologados</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3 py-3 d-flex align-items-streach">
+          <div class="danger-color w-100 rounded-lg">
+            <div class="text-center text-white p-3">
+              <i class="fas fa-bug fa-2x mb-3"></i>
+              <p class="font-weight-bold font-20">Tratamiento</p>
+              <hr class="border border-white rounded-lg">
+              <p class="font-weight-bold my-3">Nuestros técnicos homologados aplicarán el tratamiento adecuado</p>
+              <div class="text-left">
+                <div class="d-flex align-items-center justify-content-start mt-3">
+                  <i class="fas fa-check fa-1x mr-2"></i> <span>Acordamos la hora del tratamiento</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mt-3">
+                  <i class="fas fa-check fa-1x mr-2"></i> <span>Responsabilidad medioambiental</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mt-3">
+                  <i class="fas fa-check fa-1x mr-2"></i> <span>Tratamiento sin riesgo para mascotas y niños</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mt-3">
+                  <i class="fas fa-check fa-1x mr-2"></i> <span>Servicio discreto</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3 py-3 d-flex align-items-streach">
+          <div class="success-color w-100 rounded-lg">
+            <div class="text-center text-white p-3">
+              <i class="fas fa-shield-alt fa-2x mb-3"></i>
+              <p class="font-weight-bold font-20">Auditoría</p>
+              <hr class="border border-white rounded-lg">
+              <p class="font-weight-bold my-3">Acordaremos los servicios necesarios para asegurar que el problema sea resuelto</p>
+              <div class="text-left">
+                <div class="d-flex align-items-center justify-content-start mt-3">
+                  <i class="fas fa-check fa-1x mr-2"></i> <span>Solución garantizada</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-start mt-3">
+                  <i class="fas fa-check fa-1x mr-2"></i> <span>Recomendaciones de prevención</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+mixin collapse-questions(objsCollapses)
+  .text-center
+    each obj, i in objsCollapses
+      a.white-circle.d-block.my-2.p-2.rounded-lg.text-white.position-relative.pb-4.z-index-2(data-toggle="collapse" href=`#frencuentQuestions-${i}` role="button" aria-expanded="false" aria-controls="frencuentQuestions")= obj.question
+        .d-flex-justify-content-center.position-absolute.icon-absolute-plus.z-index-3
+          i.fas.fa-chevron-down.fa-1x.white-circle.p-1.rounded-circle.z-depth-1.position-relative
+      .row
+        .col
+          .collapse.multi-collapse(id=`frencuentQuestions-${i}`)
+            .card.card-body.my-2.position-relative.bottom-20= obj.answer
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+mixin carrousel(objSlides)
+  .card.card-body
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        each obj,i in objSlides
+          if i === 0
+            <div class="carousel-item active">
+              <img class="w-100" src="./img/bugs/#{obj.img}" alt="First slide">
+            </div>
+          else
+            <div class="carousel-item">
+              <img class="w-100" src="./img/bugs/#{obj.img}" alt="First slide">
+            </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+mixin labelFactory(nameLabel, idInput, typeInput)
+  .md-form.mb-0.input-form
+    input(type=`${typeInput}`, name=`${idInput}`, id=`${idInput}`, required).form-control.rounded-lg.py-2
+    label= nameLabel
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+mixin form(bugs, places)
+  <div class="container my-3">
+    <div class="row">
+        .col-md-8.mb-md-0.mb-5.d-flex.align-items-strech
+          .card.card-body.rounded-xl.my-2.bg-dark.position-relative#form-container
+            .text-center.my-1.red.text-white.rounded-xl.py-3.position-relative.z-index-3.z-depth-1
+              h3.text-uppercase.font-weight-bold.spacing-4.m-0.d-inline-block contacto
+            .white.w-75.mx-auto.position-absolute.top-75.left-0.right-0.rounded-lg
+              p.text-center.pt-4.pb-3.font-12.m-0.text-uppercase.font-weight.bold.spacing-2.mt-1 su consulta no molesta
+            form(name="contact-form")#contact-form.mt-4.pt-5
+              .row
+                .col-sm-12.col-md-6
+                  +labelFactory("Nombre", "name", "text")
+                .col-sm-12.col-md-6
+                  +labelFactory("Correo Electronico", "emailInput", "email")
+              .row.my-2
+                .col-sm-12.col-md-12.mx-auto
+                  +labelFactory("Telefono:", "phone", "text")
+              .row
+                .col-md-6
+                  .md-form.input-form
+                    select#bugSelect.browser-default.custom-select.my-2.text-white
+                      option(selected, disabled) Seleccione servicio
+                      each service,i in services
+                        option(value=`${service}`)=service
+                .col-md-6
+                  .md-form.input-form
+                    select#placeSelect.browser-default.custom-select.my-2.text-white
+                      option(selected, disabled) Seleccione lugar
+                      each place,i in places
+                        option(value=`${place}`)=place
+              .row
+                .col-md-12
+                  .md-form.input-form.my-5
+                    textarea(type="text", id="message", name="message", row="2").form-control.rounded-lg.p-2.mb-0
+                    label Tu mensaje
+              .row
+                .col-md-12
+                  .text-center.mt-3
+                    input(type="submit", value="Enviar consulta").btn.red.rounded-xl.font-weight-bold.text-white.spacing-1
+
+          #response.my-auto
+
+        .col-md-4.text-center.d-flex.align-items-center
+          .card.card-body.rounded-xl.my-2.red
+            ul.list-unstyled.mb-0.my-auto
+              li
+                .card.card-body.square-element-3.d-inline-flex.p-2.align-items-center.bg-dark.rounded-lg.z-depth-1-half
+                  i.fas.fa-map-marker-alt.fa-md.text-white.my-auto
+                p.mt-2.mb-4.font-14.text-white Ramos Mejia, Buenos Aires, Argentina
+              li
+                .card.card-body.square-element-3.d-inline-flex.p-2.align-items-center.bg-dark.rounded.lg.z-depth-1-half
+                  i.fas.fa-phone.fa-md.text-white.my-auto
+                .mt-2.mb-4
+                  p.font-14.mb-1.text-white 4650-8202
+                  a(target="_blank",href="https://wa.me/5491131039463?text=Hola%2C%20que%20tal%3F%2C%20vengo%20desde%20tu%20web%20y%20necesito%20que%20me%20asesores..").btn.bg-dark.rounded-lg.btn-sm.text-white #[i.fab.fa-whatsapp.fa-lg.mb-2] #[p.mb-0 Hablenos por Whatsapp]
+              li
+                .card.card-body.square-element-3.d-inline-flex.p-2.align-items-center.bg-dark.rounded-lg.z-depth-1-half
+                  i.fas.fa-envelope.fa-md.text-white.my-auto
+                p.mt-2.mb-4.font-14.text-white info@fumigacionesrm.com.ar
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+mixin card-bug(bugs)
+  each bug in bugs
+    .col-sm-6.col-md-4.my-3.d-flex.align-items-streach.justify-content-streach
+      a(data-toggle="modal", data-target=`#${bug.modal.id}`).card.text-center.w-100.rounded-xl
+        .card-body.d-flex.align-items-start.justify-content-center
+          .my-3
+            .square-element-6.mx-auto.rounded-circle.bg-dark.d-flex.align-items-center.justify-content-center.p-2
+              if(bug.img.split(".")[1] != "svg")
+                i(class=`${bug.img} text-white fa-4x`)
+              else
+                img(src=`./img/svg/${bug.img}`, alt=`${bug.name}`).img-plague
+            hr.w-75.mx-auto.my-4.danger-color.pt-1.rounded
+            p.lato.text-uppercase.font-18.mb-1.text-dark.spacing-2.my-auto #{bug.name}
+    .modal.fade(id=`${bug.modal.id}`, tabindex="-1", role="dialog", aria-labelledby=`${bug.modal.title}`, aria-hidden="true")
+      .modal-dialog.modal-dialog-centered(role="document")
+        .modal-content.rounded-xl
+          .modal-header.d-flex.align-items-center.justify-content-center.flex-column.text-center.position-relative.text-white.bg-dark.rounded-xl-top
+            button(type="button", data-dismiss="modal", aria-label="Close").btn-close-modal.red.z-depth-1.position-absolute.bottom-85
+              span(aria-hidden="true") &times;
+            h5.modal-title.text-uppercase.font-weight-bold.spacing-2.mt-2(id=`modalTitle${bug.modal.id}`)= bug.modal.title
+          .modal-body(id=`${bug.modal.id}-content`) #{bug.modal.description}
