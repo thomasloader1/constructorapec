@@ -1,152 +1,50 @@
-    body {
-        font-family: 'Open Sans';
-        background-image: url('../img/constructora.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        position: relative;
-        z-index: -1;
-        width: 100%;
-        height: 100vh;
-        &::after {
-            content: '';
-            display: block;
-            background-color: rgba($color: #000000, $alpha: 0.85);
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            z-index: 1;
-            width: 100%;
-            height: 100vh;
+@import 'fonts';
+@import 'home.scss';
+
+.d-grid{
+    display: grid;
+}
+html{
+    overflow: hidden;
+}
+
+.nav-grid{
+    display: grid;
+    grid-template: {
+        columns: repeat(3, 110px);
+        rows: repeat(2, minmax(30px, 35px));
+    };
+    grid-auto: {
+        rows: minmax(30px, 35px);
+        columns: 110px;
+    }
+    align-self: start;
+    justify-content: center;
+    gap: 5px;
+    &_item{
+        align-self: center;
+        justify-self: center;
+        &:first-child{
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+        }
+        &:nth-child(2){
+            grid: {
+                column: 2 / 4;
+                row: 1 / 2;
+            };
         }
     }
-    
-    .font {
-        &-small {
-            font-size: 14px !important;
-        }
+    &_link{
+        text-align: center;
     }
-    
-    .separed-word {
-        letter-spacing: 2pt;
+}
+
+@for $i from 0 through 100{
+    .spacing-#{$i}{
+        letter-spacing: #{$i}px;
     }
-    
-    .box {
-        &-center {
-            z-index: 2;
-            position: absolute;
-            width: 100%;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
-        }
+    .font-#{$i}{
+        font-size: #{$i}rem;
     }
-    
-    .button-send {
-        right: 0;
-        top: 0;
-    }
-    
-    main {
-        position: relative;
-        z-index: 2;
-    }
-    
-    .fa-whatsapp-square {
-        transition: all .1s ease-in-out;
-        &:hover {
-            color: #00bb2d !important;
-            background-color: white;
-            box-shadow: 0 0 0 3px white;
-            border-radius: 2px;
-            padding-left: 2px;
-            padding-right: 2px;
-        }
-        &.active {
-            color: #00bb2d !important;
-            background-color: white;
-            box-shadow: 0 0 0 3px white;
-            border-radius: 2px;
-            padding-left: 2px;
-            padding-right: 2px;
-        }
-        &.icon-translate {
-            position: absolute;
-            left: 20px;
-            top: 3px;
-        }
-    }
-    
-    #wspMessage {
-        &::placeholder {
-            text-indent: 10pt;
-        }
-        &::focus {
-            border-color: white !important;
-        }
-    }
-    
-    #button-wsp {
-        border: 1px solid white;
-    }
-    
-    .fa-facebook-square {
-        transition: all .1s ease-in-out;
-        &:hover {
-            color: #3b5998 !important;
-            background-color: white;
-            box-shadow: 0 0 0 3px white;
-            border-radius: 2px;
-            padding-left: 2px;
-            padding-right: 2px;
-        }
-    }
-    
-    .fa-envelope-square {
-        transition: all .1s ease-in-out;
-        &:hover {
-            color: #30e0c9 !important;
-            background-color: white;
-            box-shadow: 0 0 0 3px white;
-            border-radius: 2px;
-            padding-left: 2px;
-            padding-right: 2px;
-        }
-    }
-    
-    .fa-instagram {
-        transition: all .1s ease-in-out;
-        &:hover {
-            color: violet !important;
-            background-color: white;
-            box-shadow: 0 0 0 3px white;
-            border-radius: 2px;
-            padding-left: 2px;
-            padding-right: 2px;
-        }
-    }
-    
-    .fa-phone-square-alt {
-        transition: all .1s ease-in-out;
-        &:hover {
-            color: #00a816 !important;
-            background-color: white;
-            box-shadow: 0 0 0 3px white;
-            border-radius: 2px;
-            padding-left: 2px;
-            padding-right: 2px;
-        }
-    }
-    
-    .active-icon {
-        color: #00a816 !important;
-        background-color: white;
-        box-shadow: 0 0 0 3px white;
-        border-radius: 2px;
-        padding-left: 2px;
-        padding-right: 2px;
-    }
+}

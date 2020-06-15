@@ -1,0 +1,43 @@
+.home{
+    height: 100%;
+    width: 100%;
+    &-bg{
+        @extend .home;
+        background: {
+            image: url('../img/banner-bg.jpg');
+            position: center;
+            size: cover;
+        }
+    }
+    &-grid{
+        display: grid;
+        grid-template: {
+            columns: 1fr;
+            rows: minmax(200px, auto) 0px minmax(70px, auto);
+            areas: "top"
+                    "center"
+                    "bottom";
+        }
+        height: 100%;
+        transition: all 0.5s ease-in-out;
+        .item-grid{
+            &-img{
+                align-self: end;
+                justify-self: center;
+                grid-area: top;
+            }
+            &-content{
+                grid-area: center;
+                align-self: center;
+                justify-content: center;
+            }
+            &-menu{
+                display: flex;
+                align-self: start;
+                justify-content: center;
+                grid-area: bottom;
+                height: 100%;
+            }
+        }
+    }
+}
