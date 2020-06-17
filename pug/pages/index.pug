@@ -3,29 +3,5 @@ block append config
     - titlePage = "Inicio"
 
 block append content
-    .d-grid#grid-content.vh-100
-        .home-bg
-            .home-grid#home-grid
-                img(src="./img/svg/logo-pec.svg", alt="Construsctora PEC - Logo").item-grid-img
-                #item-grid-menu.item-grid-menu
-                    ul#navigation.nav-grid.text-uppercase.spacing-2.p-0.mx-auto.list-unstyled.font-1
-                        li.nav-grid_item
-                            a.nav-grid_link.text-white(href="#!") home
-                        li.nav-grid_item
-                            a.nav-grid_link.text-white(href="#!") nosotros
-                        li.nav-grid_item
-                            a.nav-grid_link.text-white(href="#!") obras
-                        li.nav-grid_item
-                            a.nav-grid_link.text-white(href="#!") servicios
-                        li.nav-grid_item
-                            a.nav-grid_link.text-white(href="#!") contacto
-
-                #item-grid-content.item-grid-content.grey.lighten-3.h-100.d-none
-                    .container
-                        .row.py-2
-                            .col-sm-12.col-md-7.offset-md-5.mx-auto
-                                .card.card-body.rounded-lg
-                                    h5.font-weight-bold.open-sans-700 Con más de 20 años en el rubro de la construcción, y más de 200.000 m2 construidos, PERIC CONSTRUCTORA es el resultado de una amplia trayectoria basada en la experiencia y responsabilidad de los profesionales que la integran.
-                                    p.text-muted.open-sans-300 Nuestra empresa brinda a sus CLIENTES una solución integral para la construcción de obras en los sistemas constructivos más utilizados en la actualidad.
-
-                        
+    section#obras.bg-dark
+        include ./obras.pug

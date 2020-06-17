@@ -2,15 +2,15 @@
 .oswald {
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
-    &-300{
+    &-300 {
         @extend .oswald;
         font-weight: 300;
     }
-    &-600{
+    &-600 {
         @extend .oswald;
         font-weight: 600;
     }
-    &-700{
+    &-700 {
         @extend .oswald;
         font-weight: 700;
     }
@@ -19,11 +19,11 @@
 .open-sans {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    &-300{
+    &-300 {
         @extend .open-sans;
         font-weight: 300;
     }
-    &-700{
+    &-700 {
         @extend .open-sans;
         font-weight: 700;
     }
