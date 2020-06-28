@@ -1,37 +1,36 @@
-.home{
+.home {
     height: 100%;
     width: 100%;
-    &-bg{
+    &-bg {
         @extend .home;
         background: {
             image: url('../img/banner-bg.jpg');
             position: center;
             size: cover;
         }
+        
     }
-    &-grid{
+    &-grid {
         display: grid;
         grid-template: {
             columns: 1fr;
             rows: minmax(200px, auto) 0px minmax(70px, auto);
-            areas: "top"
-                    "center"
-                    "bottom";
+            areas: "top" "center" "bottom";
         }
         height: 100%;
         transition: all 0.5s ease-in-out;
-        .item-grid{
-            &-img{
+        .item-grid {
+            &-img {
                 align-self: end;
                 justify-self: center;
                 grid-area: top;
             }
-            &-content{
+            &-content {
                 grid-area: center;
                 align-self: center;
                 justify-content: center;
             }
-            &-menu{
+            &-menu {
                 display: flex;
                 align-self: start;
                 justify-content: center;
